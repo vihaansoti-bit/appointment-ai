@@ -162,7 +162,6 @@ POST /api/v1/appointment/parse
 
 \### 2. Extract Appointment Entities
 
-
 \*\*Endpoint\*\*
 
 ```
@@ -209,7 +208,6 @@ POST /api/v1/appointment/entities
 
 \### 3. Normalize Date \& Time
 
-
 \*\*Endpoint\*\*
 
 ```
@@ -217,7 +215,6 @@ POST /api/v1/appointment/entities
 POST /api/v1/appointment/normalize
 
 ```
-
 
 \*\*Request Body\*\*
 
@@ -232,7 +229,6 @@ POST /api/v1/appointment/normalize
 }
 
 ```
-
 
 \*\*Response\*\*
 
@@ -257,7 +253,6 @@ POST /api/v1/appointment/normalize
 ```
 
 \### 4. Final Appointment Output
-
 
 \*\*Endpoint\*\*
 
@@ -294,20 +289,15 @@ POST /api/v1/appointment/final
 
    "time": "15:00"
 
-\## Guardrails \& Error Handling
+## Guardrails & Error Handling
 
 ```json
-
 {
-
- "status": "needs_clarification",
-
- "message": "Ambiguous date/time or department"
-
+  "status": "needs_clarification",
+  "message": "Ambiguous date/time or department"
 }
 
 ```
-
 \## STEP 6 — cURL \& Postman Requests
 
 \### 6.1 Parse Appointment (OCR / Text Extraction)
