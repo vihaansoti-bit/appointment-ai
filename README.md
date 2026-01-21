@@ -290,9 +290,9 @@ POST /api/v1/appointment/final
    "time":" 15:00"
  }
 }
-## Guardrails & Error Handling
+```## Guardrails & Error Handling
 
-```json
+```json```
 {
   "status": "needs_clarification",
   "message": "Ambiguous date/time or department"
