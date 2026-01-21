@@ -287,7 +287,7 @@ POST /api/v1/appointment/final
 
    "date": "YYYY-MM-DD",
 
-   "time":"15:00"
+   "time":" 15:00"
  }
 
 ## Guardrails & Error Handling
