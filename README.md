@@ -3,15 +3,12 @@
 \## Overview
 
 
-
 This project is a backend service that converts natural language or document-based appointment requests into structured scheduling data.
-
 
 
 It supports both typed text and image-based inputs and processes them through OCR, entity extraction, normalization, and guardrails to produce a final appointment JSON.
 
 \## Features
-
 
 
 \- Accepts typed text or image input
@@ -29,7 +26,6 @@ It supports both typed text and image-based inputs and processes them through OC
 \## Tech Stack
 
 
-
 \- Python 3.10+
 
 \- FastAPI
@@ -43,7 +39,6 @@ It supports both typed text and image-based inputs and processes them through OC
 \- pytz
 
 \## Architecture Flow
-
 
 
 Input (Text / Image)  
@@ -72,19 +67,13 @@ Final Appointment JSON
 
 \### 1. Clone the Repository
 
-
-
 ```bash
 
 git clone <your-github-repo-url>
 
 cd appointment-ai
 
-
-
 \### 2. Create and Activate Virtual Environment
-
-
 
 ```bash
 
@@ -96,25 +85,17 @@ venv\\Scripts\\activate
 
 \### 3. Install Dependencies
 
-
-
 ```bash
 
 pip install -r requirements.txt
 
 \### 4. Install Tesseract OCR (Windows)
 
-
-
 \- Download and install Tesseract OCR from the official UB-Mannheim Windows build
 
 \- Add the following path to System Environment Variables (PATH):
 
-
-
 C:\\Program Files\\Tesseract-OCR\\
-
-
 
 Verify installation:
 
@@ -124,19 +105,13 @@ tesseract --version
 
 \### 5. Run the Application
 
-
-
 ```bash
 
 uvicorn app.main:app --reload
 
 ```
 
-
-
 Open Swagger UI in your browser:
-
-
 
 ```
 
@@ -149,7 +124,6 @@ http://127.0.0.1:8000/docs
 \### 1. Parse Appointment (OCR / Text Extraction)
 
 
-
 \*\*Endpoint\*\*
 
 ```
@@ -157,8 +131,6 @@ http://127.0.0.1:8000/docs
 POST /api/v1/appointment/parse
 
 ```
-
-
 
 \*\*Request Body\*\*
 
@@ -173,8 +145,6 @@ POST /api/v1/appointment/parse
 }
 
 ```
-
-
 
 \*\*Response\*\*
 
@@ -193,7 +163,6 @@ POST /api/v1/appointment/parse
 \### 2. Extract Appointment Entities
 
 
-
 \*\*Endpoint\*\*
 
 ```
@@ -201,8 +170,6 @@ POST /api/v1/appointment/parse
 POST /api/v1/appointment/entities
 
 ```
-
-
 
 \*\*Request Body\*\*
 
@@ -217,8 +184,6 @@ POST /api/v1/appointment/entities
 }
 
 ```
-
-
 
 \*\*Response\*\*
 
@@ -245,7 +210,6 @@ POST /api/v1/appointment/entities
 \### 3. Normalize Date \& Time
 
 
-
 \*\*Endpoint\*\*
 
 ```
@@ -253,7 +217,6 @@ POST /api/v1/appointment/entities
 POST /api/v1/appointment/normalize
 
 ```
-
 
 
 \*\*Request Body\*\*
@@ -269,7 +232,6 @@ POST /api/v1/appointment/normalize
 }
 
 ```
-
 
 
 \*\*Response\*\*
@@ -297,16 +259,12 @@ POST /api/v1/appointment/normalize
 \### 4. Final Appointment Output
 
 
-
 \*\*Endpoint\*\*
 
 ```
-
 POST /api/v1/appointment/final
 
 ```
-
-
 
 \*\*Request Body\*\*
 
@@ -321,8 +279,6 @@ POST /api/v1/appointment/final
 }
 
 ```
-
-
 
 \*\*Response\*\*
 
@@ -340,10 +296,6 @@ POST /api/v1/appointment/final
 
 \## Guardrails \& Error Handling
 
-
-
-
-
 ```json
 
 {
@@ -356,19 +308,9 @@ POST /api/v1/appointment/final
 
 ```
 
-\## API Endpoints
-
-...endpoint descriptions...
-
-
-
 \## STEP 6 — cURL \& Postman Requests
 
-
-
 \### 6.1 Parse Appointment (OCR / Text Extraction)
-
-
 
 ```bash
 
@@ -448,7 +390,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/normalize \\
 
 }
 
-curl -X POST http://127.0.0.1:8000/api/v1/appointment/finalize \\
+curl -X POST http://127.0.0.1:8000/api/v1/appointment/final \\
 
 -H "Content-Type: application/json" \\
 
