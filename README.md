@@ -289,7 +289,7 @@ POST /api/v1/appointment/final
 
    "time":" 15:00"
  }
-
+}
 ## Guardrails & Error Handling
 
 ```json
