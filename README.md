@@ -166,9 +166,9 @@ POST /api/v1/appointment/parse
 
 {
 
-&nbsp; "input\_type": "text",
+ "input\_type": "text",
 
-&nbsp; "content": "Book dentist next Friday at 3pm"
+ "content": "Book dentist next Friday at 3pm"
 
 }
 
@@ -182,9 +182,9 @@ POST /api/v1/appointment/parse
 
 {
 
-&nbsp; "raw\_text": "Book dentist next Friday at 3pm",
+ "raw\_text": "Book dentist next Friday at 3pm",
 
-&nbsp; "confidence": 0.80
+ "confidence": 0.80
 
 }
 
@@ -210,9 +210,9 @@ POST /api/v1/appointment/entities
 
 {
 
-&nbsp; "input\_type": "text",
+ "input\_type": "text",
 
-&nbsp; "content": "Book dentist next Friday at 3pm"
+ "content": "Book dentist next Friday at 3pm"
 
 }
 
@@ -226,17 +226,17 @@ POST /api/v1/appointment/entities
 
 {
 
-&nbsp; "entities": {
+ "entities": {
 
-&nbsp;   "department": "dentist",
+   "department": "dentist",
 
-&nbsp;   "date\_phrase": "next Friday",
+   "date\_phrase": "next Friday",
 
-&nbsp;   "time\_phrase": "3pm"
+   "time\_phrase": "3pm"
 
-&nbsp; },
+ },
 
-&nbsp; "entities\_confidence": 0.85
+ "entities\_confidence": 0.85
 
 }
 
@@ -262,9 +262,9 @@ POST /api/v1/appointment/normalize
 
 {
 
-&nbsp; "date\_phrase": "next Friday",
+ "date\_phrase": "next Friday",
 
-&nbsp; "time\_phrase": "3pm"
+ "time\_phrase": "3pm"
 
 }
 
@@ -278,17 +278,17 @@ POST /api/v1/appointment/normalize
 
 {
 
-&nbsp; "normalized": {
+ "normalized": {
 
-&nbsp;   "date": "YYYY-MM-DD",
+   "date": "YYYY-MM-DD",
 
-&nbsp;   "time": "15:00",
+   "time": "15:00",
 
-&nbsp;   "tz": "Asia/Kolkata"
+   "tz": "Asia/Kolkata"
 
-&nbsp; },
+ },
 
-&nbsp; "normalization\_confidence": 0.90
+ "normalization\_confidence": 0.90
 
 }
 
@@ -314,9 +314,9 @@ POST /api/v1/appointment/final
 
 {
 
-&nbsp; "input\_type": "text",
+ "input\_type": "text",
 
-&nbsp; "content": "Book dentist next Friday at 3pm"
+ "content": "Book dentist next Friday at 3pm"
 
 }
 
@@ -330,13 +330,13 @@ POST /api/v1/appointment/final
 
 {
 
-&nbsp; "appointment": {
+ "appointment": {
 
-&nbsp;   "department": "Dentistry",
+   "department": "Dentistry",
 
-&nbsp;   "date": "YYYY-MM-DD",
+   "date": "YYYY-MM-DD",
 
-&nbsp;   "time": "15:
+   "time": "15:
 
 \## Guardrails \& Error Handling
 
@@ -348,9 +348,9 @@ POST /api/v1/appointment/final
 
 {
 
-&nbsp; "status": "needs\_clarification",
+ "status": "needs\_clarification",
 
-&nbsp; "message": "Ambiguous date/time or department"
+ "message": "Ambiguous date/time or department"
 
 }
 
@@ -378,17 +378,17 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/parse \\
 
 -d '{
 
-&nbsp; "input\_type": "text",
+ "input\_type": "text",
 
-&nbsp; "content": "Book dentist next Friday at 3pm"
+ "content": "Book dentist next Friday at 3pm"
 
 }'
 
 {
 
-&nbsp; "raw\_text": "Book dentist next Friday at 3pm",
+ "raw\_text": "Book dentist next Friday at 3pm",
 
-&nbsp; "confidence": 0.80
+ "confidence": 0.80
 
 }
 
@@ -398,25 +398,25 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/entities \\
 
 -d '{
 
-&nbsp; "input\_type": "text",
+ "input\_type": "text",
 
-&nbsp; "content": "Book dentist next Friday at 3pm"
+ "content": "Book dentist next Friday at 3pm"
 
 }'
 
 {
 
-&nbsp; "entities": {
+ "entities": {
 
-&nbsp;   "department": "dentist",
+   "department": "dentist",
 
-&nbsp;   "date\_phrase": "next Friday",
+   "date\_phrase": "next Friday",
 
-&nbsp;   "time\_phrase": "3pm"
+   "time\_phrase": "3pm"
 
-&nbsp; },
+ },
 
-&nbsp; "entities\_confidence": 0.85
+ "entities\_confidence": 0.85
 
 }
 
@@ -426,25 +426,25 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/normalize \\
 
 -d '{
 
-&nbsp; "date\_phrase": "next Friday",
+ "date\_phrase": "next Friday",
 
-&nbsp; "time\_phrase": "3pm"
+ "time\_phrase": "3pm"
 
 }'
 
 {
 
-&nbsp; "normalized": {
+ "normalized": {
 
-&nbsp;   "date": "YYYY-MM-DD",
+   "date": "YYYY-MM-DD",
 
-&nbsp;   "time": "15:00",
+   "time": "15:00",
 
-&nbsp;   "tz": "Asia/Kolkata"
+   "tz": "Asia/Kolkata"
 
-&nbsp; },
+ },
 
-&nbsp; "normalization\_confidence": 0.90
+ "normalization\_confidence": 0.90
 
 }
 
@@ -454,27 +454,27 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/finalize \\
 
 -d '{
 
-&nbsp; "input\_type": "text",
+ "input\_type": "text",
 
-&nbsp; "content": "Book dentist next Friday at 3pm"
+ "content": "Book dentist next Friday at 3pm"
 
 }'
 
 {
 
-&nbsp; "appointment": {
+ "appointment": {
 
-&nbsp;   "department": "Dentist",
+   "department": "Dentist",
 
-&nbsp;   "date": "YYYY-MM-DD",
+   "date": "YYYY-MM-DD",
 
-&nbsp;   "time": "15:00",
+   "time": "15:00",
 
-&nbsp;   "tz": "Asia/Kolkata"
+   "tz": "Asia/Kolkata"
 
-&nbsp; },
+ },
 
-&nbsp; "status": "ok"
+ "status": "ok"
 
 }
 
