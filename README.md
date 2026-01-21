@@ -138,7 +138,7 @@ POST /api/v1/appointment/parse
 
 {
 
- "input\_type": "text",
+ "input_type": "text",
 
  "content": "Book dentist next Friday at 3pm"
 
@@ -152,7 +152,7 @@ POST /api/v1/appointment/parse
 
 {
 
- "raw\_text": "Book dentist next Friday at 3pm",
+ "raw_text": "Book dentist next Friday at 3pm",
 
  "confidence": 0.80
 
