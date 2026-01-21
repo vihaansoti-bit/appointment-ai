@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+pytesseract
+pillow
+opencv-python
+numpy
+dateparser
+pytz
