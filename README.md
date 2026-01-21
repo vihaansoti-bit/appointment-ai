@@ -177,7 +177,7 @@ POST /api/v1/appointment/entities
 
 {
 
- "input\_type": "text",
+ "input_type": "text",
 
  "content": "Book dentist next Friday at 3pm"
 
@@ -195,13 +195,13 @@ POST /api/v1/appointment/entities
 
    "department": "dentist",
 
-   "date\_phrase": "next Friday",
+   "date_phrase": "next Friday",
 
-   "time\_phrase": "3pm"
+   "time_phrase": "3pm"
 
  },
 
- "entities\_confidence": 0.85
+ "entities_confidence": 0.85
 
 }
 
@@ -225,9 +225,9 @@ POST /api/v1/appointment/normalize
 
 {
 
- "date\_phrase": "next Friday",
+ "date_phrase": "next Friday",
 
- "time\_phrase": "3pm"
+ "time_phrase": "3pm"
 
 }
 
@@ -250,7 +250,7 @@ POST /api/v1/appointment/normalize
 
  },
 
- "normalization\_confidence": 0.90
+ "normalization_confidence": 0.90
 
 }
 
@@ -272,7 +272,7 @@ POST /api/v1/appointment/final
 
 {
 
- "input\_type": "text",
+ "input_type": "text",
 
  "content": "Book dentist next Friday at 3pm"
 
@@ -300,7 +300,7 @@ POST /api/v1/appointment/final
 
 {
 
- "status": "needs\_clarification",
+ "status": "needs_clarification",
 
  "message": "Ambiguous date/time or department"
 
@@ -320,7 +320,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/parse \\
 
 -d '{
 
- "input\_type": "text",
+ "input_type": "text",
 
  "content": "Book dentist next Friday at 3pm"
 
@@ -328,7 +328,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/parse \\
 
 {
 
- "raw\_text": "Book dentist next Friday at 3pm",
+ "raw_text": "Book dentist next Friday at 3pm",
 
  "confidence": 0.80
 
@@ -340,7 +340,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/entities \\
 
 -d '{
 
- "input\_type": "text",
+ "input_type": "text",
 
  "content": "Book dentist next Friday at 3pm"
 
@@ -352,13 +352,13 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/entities \\
 
    "department": "dentist",
 
-   "date\_phrase": "next Friday",
+   "date_phrase": "next Friday",
 
-   "time\_phrase": "3pm"
+   "time_phrase": "3pm"
 
  },
 
- "entities\_confidence": 0.85
+ "entities_confidence": 0.85
 
 }
 
@@ -368,9 +368,9 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/normalize \\
 
 -d '{
 
- "date\_phrase": "next Friday",
+ "date_phrase": "next Friday",
 
- "time\_phrase": "3pm"
+ "time_phrase": "3pm"
 
 }'
 
@@ -386,7 +386,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/normalize \\
 
  },
 
- "normalization\_confidence": 0.90
+ "normalization_confidence": 0.90
 
 }
 
@@ -396,7 +396,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/appointment/final \\
 
 -d '{
 
- "input\_type": "text",
+ "input_type": "text",
 
  "content": "Book dentist next Friday at 3pm"
 
